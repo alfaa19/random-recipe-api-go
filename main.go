@@ -25,9 +25,9 @@ func main() {
 		})
 	})
 	r.Use(middleware.ValidateAPIKey())
-	r.GET("/login", handler.Login)
+	r.POST("/login", handler.Login)
 	r.Use(middleware.ValidateUserToken())
 	r.GET("/recipes", handler.HandlerGetRecipe)
 
-	r.Run(":8080")
+	r.Run()
 }
